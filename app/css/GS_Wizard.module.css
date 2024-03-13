@@ -1,0 +1,125 @@
+.geometric_embark {
+  padding-block: 3%;
+}
+
+.geometric_embark_title {
+  text-transform: uppercase;
+  color: hsl(0, 0%, 76%);
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.geometric_embark__heading {
+  width: 100%;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  margin-block: 3%;
+}
+
+.geometric_embark__heading_title {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.geometric_embark__heading_desc {
+  color: hsl(0, 1%, 62%);
+  width: 70%;
+  font-weight: 400;
+}
+
+.geometric_embark__containers {
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.geometric_embark__containers__tile {
+  display: grid;
+}
+
+.geometric_embark__containers_card {
+  position: relative;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  height: 20rem;
+}
+
+.geometric_embark__containers_card svg {
+  width: 3.5rem;
+  height: 3.5rem;
+  fill: var(--container-color-dark);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.geometric_embark__containers_card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.geometric_embark__containers_card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--primary-color);
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.geometric_embark__containers_card:hover .geometric_embark__containers_card__content {
+  transform: rotateX(0deg);
+}
+
+.geometric_embark__containers_card_title {
+  margin: 0;
+  font-size: 2.3rem;
+  color: var(--container-color);
+  font-weight: 700;
+}
+
+.geometric_embark__containers_card:hover svg {
+  scale: 0;
+}
+
+.geometric_embark__containers_card_desc {
+  margin-block-start: 3%;
+  font-weight: 500;
+  color: #f7f7f7;
+  line-height: 1.4;
+}
+
+.geometric_embark__containers_card_subtitle {
+  margin-block-start: 2%;
+  margin-block-end: .5%;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+}
+
+.geometric_embark__containers_card_subdesc {
+  margin-block-end: 2%;
+}
+
+.geometric_embark__containers__tile:hover .geometric_embark__containers_card_subtitle {
+  color: var(--primary-color);
+}
+
+.geometric_embark__containers__tile button {
+  width: 45%;
+}
+
+.geometric_embark__containers__tile__btns {
+  gap: 1.5rem;
+}

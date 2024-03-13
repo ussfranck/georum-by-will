@@ -1,0 +1,28 @@
+{
+  "name": "georum-by-will",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/siema": "^1.4.11",
+    "next": "14.1.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-siema": "^1.0.1",
+    "siema": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "clsx": "^2.1.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.1",
+    "typescript": "^5"
+  }
+}

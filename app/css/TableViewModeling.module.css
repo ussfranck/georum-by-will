@@ -1,0 +1,108 @@
+.table_view_modeling {
+  width: 100%;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.table_view_modeling__heading {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.table_view_modeling__heading h3 {
+  font-size: 1.7rem;
+  display: block;
+  width: 100%;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.table_view_modeling_table {
+  width: 100%;
+  outline: .1rem solid var(--body-color);
+  table-layout: fixed;
+  background-color: var(--body-color);
+}
+
+.table_view_modeling_table thead {
+  background-color: var(--primary-color);
+}
+
+.table_view_modeling_table thead th {
+  padding: .5rem;
+}
+
+.table_view_modeling_table thead th strong {
+  color: var(--container-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.table_view_modeling_table tbody tr {
+  background-color: var(--container-color);
+  text-align: center;
+}
+
+.table_view_modeling_table tbody tr td {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: .8;
+  padding-block: .3rem;
+}
+
+.table_view_modeling_table tbody tr td a {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.table_view_modeling_table tbody tr td a:hover {
+  text-decoration: underline;
+}
+
+.table_view_modeling_table tbody tr td:first-child {
+  text-align: start;
+  padding-inline-start: .8rem;
+}
+
+.table_view_modeling_table tbody .__highlighted {
+  background-color: rgb(240, 240, 238);
+}
+
+.table_view_modeling_incoming_pagination {
+  align-self: flex-end;
+  padding-inline-end: 2%;
+  gap: .5rem;
+}
+
+.table_view_modeling_incoming_pagination a {
+  font-size: .950rem;
+  font-weight: 600;
+}
+
+.table_view_modeling_incoming_pagination_active {
+  color: var(--container-color-dark);
+  opacity: .8;
+}
+
+.table_view_modeling_incoming_pagination a:first-child {
+  pointer-events: none;
+  opacity: .7;
+  color: var(--text-color);
+}
+
+
+.table_view_modeling__heading > div {
+  gap: 1rem;
+}
+
+.table_view_modeling__heading > div select,
+.table_view_modeling__heading > div input {
+  padding-block: .5rem;
+  padding-inline: 2rem;
+  font-size: 1.020rem;
+  border-radius: .230rem;
+  background-color: transparent;
+  border: none;
+  border: .250rem solid var(--body-color);
+}

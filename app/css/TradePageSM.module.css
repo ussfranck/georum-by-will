@@ -1,0 +1,47 @@
+.app_stud_formation_gen {
+  overflow-x: hidden;
+  gap: 2rem;
+  margin-block: 3%;
+}
+
+.app_stud_formation_gen__heading {
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+.app_stud_formation_gen__heading h2 {
+  font-size: 2rem;
+}
+
+.app_stud_formation_gen__heading p {
+  font-size: 1.040rem;
+  opacity: .6;
+}
+
+.app_stud_formation_gen__content {
+  height: 40rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2;
+  gap: .3rem;
+}
+
+.app_stud_formation_gen__content div {
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr .5fr;
+  gap: .3rem;
+  cursor: pointer;
+}
+
+.div__header {
+  background-color: hsl(195, 22%, 96%);
+}
+
+.div__footer {
+  justify-content: center;
+  background-color: white;
+}
+
+.div__footer a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,95 @@
+.app_header {
+  width: 100%;
+  padding-block-start: 1.5%;
+  padding-block-end: 1.5%;
+  gap: 1rem;
+  position: relative;
+  justify-content: center;
+  /* position: sticky;
+  top: 0; */
+  background-color: white;
+}
+
+.app_header__socials {
+  width: max-content;
+  position: absolute;
+  right: 5%;
+  gap: 2rem;
+}
+
+.app_header__socials_icon_content {
+  position: relative;
+}
+
+.app_header__socials_icon_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.app_header__socials_icon_link:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.app_header__socials_icon_link svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.app_header__socials_icon_link[data-social="whatsapp"]:hover {
+  fill: #1db954;
+}
+
+.app_header__socials_icon_link[data-social="pinterest"]:hover {
+  color: #bd081c;
+}
+
+.app_header__socials_icon_link[data-social="dribbble"]:hover {
+  color: #ea4c89;
+}
+
+.app_header__socials_icon_link[data-social="telegram"]:hover {
+  color: #0088cc;
+}
+
+.app_header_navbar {
+  width: 100%;
+  background-color: hsl(195, 22%, 96%);
+  backdrop-filter: blur(50px);
+
+  height: 100%;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.app_header_navbar__links {
+  gap: 1rem;
+  justify-content: center;
+  padding-block: 2%;
+}
+
+.app_header_navbar__links_link {
+  font-weight: 500;
+  font-size: 1.070rem;
+  gap: .8rem;
+  color: var(--primary-color);
+}
+
+.menu_mobile_toggle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: none !important;
+}
+
+.active_link {
+  font-weight: bold;
+  color: var(--accent-color);
+}

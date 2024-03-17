@@ -1,0 +1,60 @@
+
+.georum_network_groups__profile_left_p_view {
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.georum_network_groups__profile_left {
+  gap: 1rem;
+  padding-inline: 1rem;
+}
+
+.georum_network_groups__profile_left_p_view_stars {
+  width: 4rem;
+  height: .8rem;
+  background-color: var(--body-color);
+}
+
+.georum_network_groups__profile_left_p_view_profile {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  background-color: var(--body-color);
+}
+
+.georum_network_groups__profile_left_p_view_profile_name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--primary-color);
+  opacity: .8;
+  cursor: pointer;
+}
+
+.georum_network_groups__profile_center {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.georum_network_groups__profile_center span {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  opacity: .8;
+}
+
+.georum_network_groups__profile_end {
+  gap: 1rem;
+  justify-content: space-around;
+  padding-inline: 3.5rem;
+}
+
+.georum_network_groups__profile_end a svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  opacity: .6;
+}

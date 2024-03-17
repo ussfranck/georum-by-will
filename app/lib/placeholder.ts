@@ -511,7 +511,7 @@ export const ServerDataPlaceHolder = {
         {
           "name": "Bob",
           "uri": "https://",
-          "gender": "genre",
+          "gender": "Memoire",
           "add_to": `${(new Date().getDate())} • ${(new Date().getMonth())} • ${(new Date().getFullYear())}`,
           "file_type": "file type",
           "file_size": 12
@@ -519,15 +519,15 @@ export const ServerDataPlaceHolder = {
         {
           "name": "Geo ressource name",
           "uri": "https://",
-          "gender": "genre",
+          "gender": "Tutos",
           "add_to": `${(new Date().getDate())} • ${(new Date().getMonth())} • ${(new Date().getFullYear())}`,
-          "file_type": "file type",
+          "file_type": "pdf",
           "file_size": 12
         },
         {
           "name": "Geo ressource name",
           "uri": "https://",
-          "gender": "genre",
+          "gender": "Livres",
           "add_to": `${(new Date().getDate())} • ${(new Date().getMonth())} • ${(new Date().getFullYear())}`,
           "file_type": "file type",
           "file_size": 12
@@ -535,7 +535,15 @@ export const ServerDataPlaceHolder = {
         {
           "name": "Marco",
           "uri": "https://",
-          "gender": "genre",
+          "gender": "Livres",
+          "add_to": `${(new Date().getDate())} • ${(new Date().getMonth())} • ${(new Date().getFullYear())}`,
+          "file_type": "pdf",
+          "file_size": 12
+        },
+        {
+          "name": "Geo ressource name",
+          "uri": "https://",
+          "gender": "Article",
           "add_to": `${(new Date().getDate())} • ${(new Date().getMonth())} • ${(new Date().getFullYear())}`,
           "file_type": "file type",
           "file_size": 12
@@ -543,23 +551,15 @@ export const ServerDataPlaceHolder = {
         {
           "name": "Geo ressource name",
           "uri": "https://",
-          "gender": "genre",
+          "gender": "Livres",
           "add_to": `${(new Date().getDate())} • ${(new Date().getMonth())} • ${(new Date().getFullYear())}`,
-          "file_type": "file type",
+          "file_type": "kml",
           "file_size": 12
         },
         {
           "name": "Geo ressource name",
           "uri": "https://",
-          "gender": "genre",
-          "add_to": `${(new Date().getDate())} • ${(new Date().getMonth())} • ${(new Date().getFullYear())}`,
-          "file_type": "file type",
-          "file_size": 12
-        },
-        {
-          "name": "Geo ressource name",
-          "uri": "https://",
-          "gender": "genre",
+          "gender": "Memoire",
           "add_to": `${(new Date().getDate())} • ${(new Date().getMonth())} • ${(new Date().getFullYear())}`,
           "file_type": "file type",
           "file_size": 12
@@ -745,4 +745,88 @@ export const ServerDataPlaceHolder = {
       ]
     },
   ]
-}
+};
+
+
+export const GeorumNetworkGroups = [
+  {
+    profile: "",
+    stars_count: 3,
+    name: "Tanke Wilfried",
+    city: "Yaounde",
+    nationality: "National",
+    phone: "+237 655 555 555",
+    email: "user@gmail.com",
+    social: "https://linkedin.com/?profile=name"
+  },
+  {
+    profile: "",
+    stars_count: 3,
+    name: "Adam Germany",
+    city: "Yaounde",
+    nationality: "National",
+    phone: "+237 655 555 555",
+    email: "user@gmail.com",
+    social: "https://linkedin.com/?profile=name"
+  },
+  {
+    profile: "",
+    stars_count: 3,
+    name: "Franck Mekoulou",
+    city: "Yaounde",
+    nationality: "National",
+    phone: "+237 655 555 555",
+    email: "user@gmail.com",
+    social: "https://linkedin.com/?profile=name"
+  },
+  {
+    profile: "",
+    stars_count: 3,
+    name: "Jessica Aureini",
+    city: "Yaounde",
+    nationality: "National",
+    phone: "+237 655 555 555",
+    email: "user@gmail.com",
+    social: "https://linkedin.com/?profile=name"
+  },
+  {
+    profile: "",
+    stars_count: 3,
+    name: "Carl Amos",
+    city: "Yaounde",
+    nationality: "National",
+    phone: "+237 655 555 555",
+    email: "user@gmail.com",
+    social: "https://linkedin.com/?profile=name"
+  },
+  {
+    profile: "",
+    stars_count: 3,
+    name: "Mason Mekoulou",
+    city: "Yaounde",
+    nationality: "National",
+    phone: "+237 655 555 555",
+    email: "user@gmail.com",
+    social: "https://linkedin.com/?profile=name"
+  },
+  {
+    profile: "",
+    stars_count: 3,
+    name: "Landry Bluun",
+    city: "Yaounde",
+    nationality: "National",
+    phone: "+237 655 555 555",
+    email: "user@gmail.com",
+    social: "https://linkedin.com/?profile=name"
+  },
+  {
+    profile: "",
+    stars_count: 3,
+    name: "Jires Perez",
+    city: "Yaounde",
+    nationality: "National",
+    phone: "+237 655 555 555",
+    email: "user@gmail.com",
+    social: "https://linkedin.com/?profile=name"
+  },
+];

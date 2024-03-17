@@ -39,19 +39,44 @@ type FilterData = {
 export const TableViewModeling: React.FC<TableViewModelingProps> = function ({ title, id, tools, data }) {
   const { foundItem, updateTableRef } = useSearch();
   const tableRef = useRef<HTMLTableElement | null>(null);
-  const fileTypeSelectRef = useRef<HTMLSelectElement | null>(null);
 
   const [filteredData, setFilteredData] = React.useState<FilterData[]>(data);
   const [inputValue, setInputValue] = React.useState<string>("");
 
-  const [fileType, setFileType] = React.useState<string | undefined>(undefined);
+  const [fileType, setFileType] = React.useState<string | undefined>("");
   const [fileGender, setFileGender] = React.useState<string | null>(null);
 
-  const handleFilterByFileType = function () {
-    setFileType(fileTypeSelectRef.current?.value);
-    console.info(fileType);
-  }
+  useEffect(() => {
+    updateTableRef(tableRef);
+    perfomFilterByFileType();
+  }, [updateTableRef, fileType]);
 
+
+  const perfomFilterByFileType = async function () {
+    let results = async function () {
+      return new Promise<FilterData[]>((resolve, reject) => {
+        const result : FilterData[] = data.filter(item => item.file_type.toLocaleLowerCase() === fileType);
+        if (!data) {
+          reject(data);
+          return;
+        }
+        resolve(result);
+      })
+    };
+
+    const filterResult = await results();
+    // console.log(filterResult);
+
+    if (!(filterResult === null || filterResult.length === 0)) {
+      setFilteredData(filterResult);
+      // console.profile("Filte Filter with success");
+      return;
+    } else {
+      setFilteredData(data);
+      // console.warn(`File Unlocated -> ${fileType}`);
+      return;
+    }
+  }
 
   const handleFilterByNameWhenKeyPressed = function (e: React.KeyboardEvent) {
     if (e.key === "Enter") {
@@ -72,48 +97,43 @@ export const TableViewModeling: React.FC<TableViewModelingProps> = function ({ t
     }
   };
 
-
-  useEffect(() => {
-    updateTableRef(tableRef);
-    setFileType("invalid-value");
-  }, [updateTableRef])
-
   return (
     <div className={`${styles.table_view_modeling} flex`} id={id.toString()}>
       <div className={`${styles.table_view_modeling__heading} flex`}>
         <h3>•&nbsp;{title}</h3>
         {
           tools &&
-          <div className="flex">
-            <select name="gender-select" id="gender-select" onChange={(e) => setFileGender(e.target.value)}>
-              <option defaultValue={"invalid-value"}>Genre du document</option>
-              <option value="gender-1">By Gender 1</option>
-              <option value="gender-2">By Gender 2</option>
-            </select>
-            <select name="type-select" id="type-select" ref={fileTypeSelectRef} onChange={() => handleFilterByFileType()}>
-              <option defaultValue={"invalid-value"}>Type du document</option>
-              <option>KML(.kml)</option>
-              <option>DOC(.docx)</option>
-              <option>PDF(.pdf)</option>
-              <option>ZIP(.pdf)</option>
-              <option>TXT(.txt)</option>
-              <option>DWG(.dwg)</option>
-              <option>GEO(.geo)</option>
-              <option>DATA(.data)</option>
-              <option>EXE(.exe) Pour Windows</option>
-              <option>PPT(.ppt)</option>
-            </select>
-            <input type="search" placeholder="Filter by name" onKeyUp={(e) => handleFilterByNameWhenKeyPressed(e)} onChange={(e) => setInputValue(e.target.value)} value={inputValue} />
-          </div>
+            id === TABS_POSITION.ALL_DOCUMENTS ? (
+            <div className="flex">
+              <select name="gender-select" id="gender-select" onChange={(e) => setFileGender(e.target.value)}>
+                <option value={""} disabled>Genre du document</option>
+                <option value="livres">Livres</option>
+                <option value="livres">Article</option>
+                <option value="livres">Memoire</option>
+                <option value="livres">Tutos</option>
+              </select>
+              <select name="type-select" id="type-select" onChange={(e) => setFileType(e.target.value)} value={fileType}>
+                <option value={""} disabled>Type du document</option>
+                <option value={"kml"}>KML(.kml)</option>
+                <option value={"pdf"}>PDF(.pdf)</option>
+                <option value={"zip"}>ZIP(.zip)</option>
+                <option value={"txt"}>TXT(.txt)</option>
+                <option value={"dwg"}>DWG(.dwg)</option>
+                <option value={"geo"}>GEO(.geo)</option>
+                <option value={"data"}>DATA(.data)</option>
+                <option value={"exe"}>EXE(.exe) Pour Windows</option>
+                <option value={"ppt"}>PPT(.ppt)</option>
+              </select>
+              <input type="search" placeholder="Fitrer Par Nom" onKeyUp={(e) => handleFilterByNameWhenKeyPressed(e)} onChange={(e) => setInputValue(e.target.value)} value={inputValue} />
+            </div>
+          ) :
+            (
+              <div className="flex">
+                <input type="search" placeholder="Filtrer Par Nom" onKeyUp={(e) => handleFilterByNameWhenKeyPressed(e)} onChange={(e) => setInputValue(e.target.value)} value={inputValue} />
+              </div>
+            )
         }
       </div>
-      {/* {withMoreTools && <div className="filter-by flex">
-      <p>Trier Par:&nbsp;</p>
-      <div className="flex">
-        <input type="date" name="filter-by-add-date" id="filter-by-add-date" placeholder="Date d'ajout" min={0} />
-        <input type="text" name="filter-by-name" id="filter-by-name" placeholder="Nom du fichier" />
-      </div>
-    </div>} */}
       <table className={styles.table_view_modeling_table} ref={tableRef}>
         <thead>
           <th><strong>Name</strong></th>
@@ -136,10 +156,10 @@ export const TableViewModeling: React.FC<TableViewModelingProps> = function ({ t
       </table>
       {filteredData.length >= 11 ? (
         <span className={`${styles.table_view_modeling_incoming_pagination} flex`}>
-        [
-        <Link href="/" className={styles.table_view_modeling_incoming_pagination_active}>Prev</Link>
-        <Link href="/">Next</Link>
-        ]</span>
+          [
+          <Link href="/" className={styles.table_view_modeling_incoming_pagination_active}>Prev</Link>
+          <Link href="/">Next</Link>
+          ]</span>
       ) : undefined}
     </div>
   );

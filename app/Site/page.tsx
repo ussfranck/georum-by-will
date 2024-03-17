@@ -6,6 +6,7 @@ import { Button } from "../components/Button";
 import Link from "next/link";
 import { GetStartedWizard } from "../components/GetStartedWizard";
 import { PreFooterBanner } from "../components/PreFooter";
+import { FooterAppComponent } from "../components/Footer";
 
 export default function SitePage() {
   return (
@@ -138,6 +139,7 @@ export default function SitePage() {
         <GetStartedWizard />
         <PreFooterBanner />
       </main>
+      <FooterAppComponent />
     </React.Fragment>
   );
 }

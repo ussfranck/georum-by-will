@@ -8,6 +8,7 @@ import { TradePageSimilarViewComponent } from "../components/TradePageSM";
 import { GetStartedWizard } from "../components/GetStartedWizard";
 import { PreFooterBanner } from "../components/PreFooter";
 import { TradeOveviewCarousel } from "../components/TradeOverviewCarousel";
+import { FooterAppComponent } from "../components/Footer";
 
 export default function TradePage() {
   return (
@@ -113,6 +114,7 @@ export default function TradePage() {
         <GetStartedWizard />
         <PreFooterBanner />
       </main>
+      <FooterAppComponent />
     </React.Fragment>
   )
 }

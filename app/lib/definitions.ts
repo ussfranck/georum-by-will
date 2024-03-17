@@ -23,7 +23,6 @@ export enum TABS_POSITION {
 
 export enum FILES_TYPE {
   PDF = ".pdf",
-  DOC = ".docx",
   EXE = ".exe",
   PPT = ".ppt",
   TXT = ".txt",

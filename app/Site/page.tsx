@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Header } from "../components/Header";
 import styles from "../css/Site.module.css";
@@ -40,7 +41,7 @@ export default function SitePage() {
                   ))}
                 </ul>
                 <div className={`${styles.ste__hero__containers_card__buttons} flex`}>
-                  <Button title="Contact Us." />
+                  <Button type="button" title="Contact Us." />
                   <Link href={categories.flagId}>Obtenir un devis.</Link>
                 </div>
               </div>
@@ -73,7 +74,7 @@ export default function SitePage() {
                   ))}
                 </ul>
                 <div className={`${styles.ste__hero__containers_card__buttons} flex`}>
-                  <Button title="Contact Us." />
+                  <Button type="button" title="Contact Us." />
                   <Link href={categories.flagId}>Obtenir un devis.</Link>
                 </div>
               </div>
@@ -129,7 +130,7 @@ export default function SitePage() {
                     ))}
                   </ul>
                   <div className={`${styles.ste__hero__containers_card__buttons} flex`}>
-                    <Button title="Voir Plus." />
+                    <Button type="button" title="Voir Plus." />
                   </div>
                 </div>
               ))

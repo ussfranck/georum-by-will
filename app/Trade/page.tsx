@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "../css/Trade.module.css";
 import { Header } from "../components/Header";
@@ -49,7 +50,7 @@ export default function TradePage() {
                 <h2 id={"georum_professions"}>La Profession</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nemo consectetur voluptatem commodi debitis, iste laboriosam quae sunt maiores repudiandae atque ad officia minima quo repellendus dolore blanditiis enim doloremque?</p>
-                <Button title="En Savoir Plus." />
+                <Button type="button" title="En Savoir Plus." />
               </div>
               <TradeOveviewCarousel />
             </div>

@@ -750,6 +750,7 @@ export const ServerDataPlaceHolder = {
 
 export const GeorumNetworkGroups = [
   {
+    id: 0,
     profile: "",
     stars_count: 3,
     name: "Tanke Wilfried",
@@ -760,6 +761,7 @@ export const GeorumNetworkGroups = [
     social: "https://linkedin.com/?profile=name"
   },
   {
+    id: 1,
     profile: "",
     stars_count: 3,
     name: "Adam Germany",
@@ -770,6 +772,7 @@ export const GeorumNetworkGroups = [
     social: "https://linkedin.com/?profile=name"
   },
   {
+    id: 2,
     profile: "",
     stars_count: 3,
     name: "Franck Mekoulou",
@@ -780,6 +783,7 @@ export const GeorumNetworkGroups = [
     social: "https://linkedin.com/?profile=name"
   },
   {
+    id: 3,
     profile: "",
     stars_count: 3,
     name: "Jessica Aureini",
@@ -790,6 +794,7 @@ export const GeorumNetworkGroups = [
     social: "https://linkedin.com/?profile=name"
   },
   {
+    id: 4,
     profile: "",
     stars_count: 3,
     name: "Carl Amos",
@@ -800,6 +805,7 @@ export const GeorumNetworkGroups = [
     social: "https://linkedin.com/?profile=name"
   },
   {
+    id: 5,
     profile: "",
     stars_count: 3,
     name: "Mason Mekoulou",
@@ -810,6 +816,7 @@ export const GeorumNetworkGroups = [
     social: "https://linkedin.com/?profile=name"
   },
   {
+    id: 6,
     profile: "",
     stars_count: 3,
     name: "Landry Bluun",
@@ -820,6 +827,7 @@ export const GeorumNetworkGroups = [
     social: "https://linkedin.com/?profile=name"
   },
   {
+    id: 7,
     profile: "",
     stars_count: 3,
     name: "Jires Perez",

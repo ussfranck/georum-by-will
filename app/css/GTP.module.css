@@ -20,6 +20,10 @@
   height: 4rem;
   border-radius: 100%;
   background-color: var(--body-color);
+  background-image: url("/user.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .6;
 }
 
 .georum_network_groups__profile_left_p_view_profile_name {
@@ -56,5 +60,12 @@
   width: 1.5rem;
   height: 1.5rem;
   object-fit: contain;
+  opacity: .6;
+}
+
+.georum_network_groups__profile_end a img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: container;
   opacity: .6;
 }

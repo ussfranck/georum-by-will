@@ -6,7 +6,7 @@ import { AppLogo } from "./components/AppLogo";
 
 export default function Home() {
 
-  const initializeLocalStorageOnConfirm = function (factor: "client" | "pro") {
+  const InitializeLocalStorageOnConfirm = function (factor: "client" | "pro") {
     // logic's
     if (factor === "pro") {
       // Local storage configs
@@ -14,7 +14,7 @@ export default function Home() {
     } else {
       return false;
     }
-  }
+  };
 
   return (
     <React.Fragment>
@@ -33,7 +33,7 @@ export default function Home() {
               Itaque tenetur assumenda libero expedita facilis, at officia quae!  Suscipit exercitationem, assumenda soluta error architecto
             </p>
             <p>sit amet consectetur adipisicing elit.</p>
-            <Button title="Je suis un Client." type="button" />
+            <Button title="Je suis un Visiteur." handleFunction={() => InitializeLocalStorageOnConfirm("client")} type="button" />
           </div>
           <div className={`flex`}>
             <h2>Je suis un professionel</h2>
@@ -41,7 +41,7 @@ export default function Home() {
               Itaque tenetur assumenda libero expedita facilis, at officia quae!  Suscipit exercitationem, assumenda soluta error architecto
             </p>
             <p>sit amet consectetur adipisicing elit.</p>
-            <Button title="Je suis Professionel." handleFunction={() => initializeLocalStorageOnConfirm("pro")} type="button" />
+            <Button title="Je suis Professionel." handleFunction={() => InitializeLocalStorageOnConfirm("pro")} type="button" />
           </div>
         </div>
       </section>

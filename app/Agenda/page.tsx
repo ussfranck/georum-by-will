@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "../css/Agenda.module.css";
 import { Header } from "../components/Header";
@@ -47,7 +49,7 @@ export default function AgendaPage() {
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officia perferendis fugit reiciendis id, perspiciatis obcaecati natus repudiandae quisquam praesentium neque blanditiis laboriosam maxime accusantium ad. Inventore rem iste asperiores?
           </p>
-          <div className={`${styles.filter} flex`}>
+          {/* <div className={`${styles.filter} flex`}>
             <h4>Retrouvez en fonction de : </h4>
             <div className="flex">
               <div className="flex">
@@ -63,14 +65,16 @@ export default function AgendaPage() {
                 </select>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className={`${styles.georum_network_groups} flex`}>
           {GeorumNetworkGroups.map((object, position) => (
-            <GeoNetworkProfile key={position} name={object.name} profile={object.profile} stars_count={Number(object.stars_count)} city={object.city} nationality={object.nationality} email={object.email} phone={Number(object.phone)} social={object.social} />
+            <GeoNetworkProfile key={position} id={object.id} name={object.name} profile={object.profile} stars_count={Number(object.stars_count)} city={object.city} nationality={object.nationality} email={object.email} phone={Number(object.phone)} social={object.social} />
           ))}
         </div>
-        <Button classname={styles.btn_viewer} title="Voir toute la liste" />
+        <div className={styles.join_containers}>
+        <Button type="link" title="Voir toute la liste" />
+        </div>
         <Link href={"/"} id={styles.join_network_link}>Rejoindre le reseau.</Link>
       </main>
       <PreFooterBanner />

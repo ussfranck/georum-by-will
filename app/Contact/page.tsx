@@ -1,13 +1,36 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import { Header } from "../components/Header";
 import styles from "../css/Contact.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { SocialLink } from "../components/Social";
 import { PreFooterBanner } from "../components/PreFooter";
 import { FooterAppComponent } from "../components/Footer";
+import emailjs from '@emailjs/browser';
+import { toast } from "react-toastify";
 
 export default function ContactPage() {
+
+  const form = useRef<any>();
+
+  const sn_id = 'sn_id-code';
+  const en_id = 'en_id-code';
+
+  const successNotif = () => toast("Yes thank you for you message.", {type: 'success', toastId: sn_id});
+  const errNotif = () => toast("Icoming, error occurend at you process", {type: 'warning', toastId: en_id});
+
+  const sendingEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    emailjs.sendForm('service_71ihbj9', 'template_jns649o', form.current, 'r_BtYKmpDT29NBDjr')
+    .then((response) => {
+      console.info(`Contact : ${response}`);
+      successNotif();
+    }).catch((reason) => {
+      console.error(`Error occurend when user sending email: ${reason}`);
+      errNotif();
+    })
+  }
+
   return (
     <React.Fragment>
       <Header currentIndex={6} />
@@ -44,22 +67,22 @@ export default function ContactPage() {
             </div>
           </div>
           <div className={`${styles.__right}`}>
-            <form className="flex">
+            <form className="flex" ref={form} onSubmit={sendingEmail}>
               <div className="flex">
                 <label htmlFor={"user_name"}>Nom Complet <span title="Important de savoir a qui on parle">*</span></label>
-                <input type="text" name={"user_name"} required id="user_name" placeholder="Entrez votre nom" />
+                <input type="text" name={"from_name"} required id="user_name" placeholder="Entrez votre nom" />
               </div>
               <div className="flex">
                 <label htmlFor={"user_email"}>Email <span title="Nous contacterons en retour par ici">*</span></label>
-                <input type="text" name={"user_email"} required id="user_email" placeholder="Entrez votre email" />
+                <input type="text" name={"from_email"} required id="user_email" placeholder="Entrez votre email" />
               </div>
               <div className="flex">
                 <label htmlFor={"user_city"}>Votre Ville</label>
-                <input type="text" name={"user_city"} id="user_city" placeholder="Commme Yaounde, Efoulan" />
+                <input type="text" name={"from_city"} id="user_city" placeholder="Commme Yaounde, Efoulan" />
               </div>
               <div className="flex">
                 <label htmlFor={"user_message"}>Votre Message <span title="Histoire d'etre serieux">*</span></label>
-                <textarea name="user_message" required id="user_message" rows={5} placeholder="Dites quelques choses"></textarea>
+                <textarea name="message" required id="user_message" rows={5} placeholder="Dites quelques choses"></textarea>
               </div>
               <button type="submit" className="button primary-button">Envoyez le message</button>
             </form>

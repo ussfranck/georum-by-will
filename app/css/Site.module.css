@@ -17,6 +17,7 @@
   text-transform: uppercase;
   color: hsl(0, 0%, 76%);
   font-weight: 500;
+  font-size: 1.3rem;
 }
 
 .ste_hero_landing__introduction__heading {
@@ -118,7 +119,7 @@
 }
 
 .ste__hero__containers_card__items_item span {
-  font-size: 1.150rem;
+  font-size: 1.1rem;
   text-transform: capitalize;
 }
 
@@ -134,19 +135,20 @@
   background-color: var(--body-color);
   margin-block: 8%;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .banner_overview h2 {
   color: var(--container-color-dark);
-  font-size: 2.5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
-.banner_overview div {
+.banner_overview > div {
   width: 100%;
   justify-content: center;
-  padding-inline: 8%;
-  gap: 1rem;
+  padding-inline: 15%;
+  gap: 1.5rem;
 }
 
 .banner_overview div div {
@@ -155,6 +157,7 @@
   align-items: center;
   line-height: 1.3;
   padding-inline: 0;
+  gap: .2rem;
 }
 
 .banner_overview div div strong {
@@ -163,7 +166,7 @@
 }
 
 .banner_overview div div span {
-  color: var(--container-color-dark);
+  color: var(--text-color);
   font-size: 1.1rem;
   text-align: center;
 }

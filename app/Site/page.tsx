@@ -1,10 +1,10 @@
+"use client";
 import React from "react";
 import { Header } from "../components/Header";
 import styles from "../css/Site.module.css";
 import { ReleaseSiteProducts } from "../lib/placeholder";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import { GetStartedWizard } from "../components/GetStartedWizard";
 import { PreFooterBanner } from "../components/PreFooter";
 import { FooterAppComponent } from "../components/Footer";
 
@@ -30,7 +30,7 @@ export default function SitePage() {
                   <p>sit amet consectetur adipisicing elit.</p>
                 </div>
                 <ul className={`${styles.ste__hero__containers_card__items} flex`}>
-                  {categories.contents.map((tile, position) => (
+                  {categories.contents.map((tile: string, position: number) => (
                     <li key={position} className={`${styles.ste__hero__containers_card__items_item} flex`}>
                       <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
                         <path d="m11.5,6c.828,0,1.5.672,1.5,1.5s-.672,1.5-1.5,1.5-1.5-.672-1.5-1.5.672-1.5,1.5-1.5Zm-6-3c.828,0,1.5-.672,1.5-1.5s-.672-1.5-1.5-1.5-1.5.672-1.5,1.5.672,1.5,1.5,1.5Zm17.736,10.015l-6.805,7.637c-1.896,2.128-4.617,3.348-7.466,3.348h-4.965c-2.206,0-4-1.794-4-4v-5c0-2.206,1.794-4,4-4h8.858c1.139,0,2.138.609,2.689,1.518l3.216-3.534c.542-.595,1.282-.944,2.086-.981.808-.042,1.574.24,2.168.782,1.214,1.107,1.312,3.004.219,4.229Zm-1.566-2.751c-.199-.182-.459-.267-.728-.262-.27.013-.518.129-.7.329l-4.426,4.864c-.385,1.071-1.339,1.891-2.514,2.059l-5.161.737c-.545.079-1.053-.301-1.131-.848-.078-.547.302-1.053.848-1.131l5.161-.737c.559-.08.981-.566.981-1.131,0-.63-.512-1.142-1.142-1.142H4c-1.103,0-2,.897-2,2v5c0,1.103.897,2,2,2h4.965c2.279,0,4.457-.976,5.973-2.678l6.805-7.638c.367-.412.334-1.049-.073-1.421Zm-15.96-1.422c.167.107.354.159.54.159.329,0,.651-.162.842-.459L11.591,1.541c.298-.464.164-1.083-.301-1.382-.463-.299-1.083-.164-1.382.301l-4.5,7c-.298.464-.164,1.083.301,1.382Z" />
@@ -40,7 +40,7 @@ export default function SitePage() {
                   ))}
                 </ul>
                 <div className={`${styles.ste__hero__containers_card__buttons} flex`}>
-                  <Button title="Contact Us." />
+                  <Button type="link" title="Contact Us." />
                   <Link href={categories.flagId}>Obtenir un devis.</Link>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export default function SitePage() {
                   ))}
                 </ul>
                 <div className={`${styles.ste__hero__containers_card__buttons} flex`}>
-                  <Button title="Contact Us." />
+                  <Button type="link" title="Contact Us." />
                   <Link href={categories.flagId}>Obtenir un devis.</Link>
                 </div>
               </div>
@@ -129,14 +129,13 @@ export default function SitePage() {
                     ))}
                   </ul>
                   <div className={`${styles.ste__hero__containers_card__buttons} flex`}>
-                    <Button title="Voir Plus." />
+                    <Button type="link" title="Voir Plus." />
                   </div>
                 </div>
               ))
             }
           </div>
         </section>
-        <GetStartedWizard />
         <PreFooterBanner />
       </main>
       <FooterAppComponent />

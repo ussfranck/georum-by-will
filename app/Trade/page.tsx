@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "../css/Trade.module.css";
 import { Header } from "../components/Header";
@@ -5,12 +6,12 @@ import { QuickAccessLinksPanelData, TradePageMissionSectionTabsDataHolder, Trade
 import Link from "next/link";
 import { Button } from "../components/Button";
 import { TradePageSimilarViewComponent } from "../components/TradePageSM";
-import { GetStartedWizard } from "../components/GetStartedWizard";
 import { PreFooterBanner } from "../components/PreFooter";
 import { TradeOveviewCarousel } from "../components/TradeOverviewCarousel";
 import { FooterAppComponent } from "../components/Footer";
 
 export default function TradePage() {
+
   return (
     <React.Fragment>
       <Header currentIndex={2} />
@@ -49,7 +50,7 @@ export default function TradePage() {
                 <h2 id={"georum_professions"}>La Profession</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nemo consectetur voluptatem commodi debitis, iste laboriosam quae sunt maiores repudiandae atque ad officia minima quo repellendus dolore blanditiis enim doloremque?</p>
-                <Button title="En Savoir Plus." />
+                <Button type="button" handleFunction={() => {}} title="En Savoir Plus." />
               </div>
               <TradeOveviewCarousel />
             </div>
@@ -111,7 +112,6 @@ export default function TradePage() {
               object_id={"georum-collaboration"} />
           </div>
         </section>
-        <GetStartedWizard />
         <PreFooterBanner />
       </main>
       <FooterAppComponent />
